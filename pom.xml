@@ -15,6 +15,7 @@
     </properties>
     <modules>
         <module>recipe-core</module>
+        <module>recipe-app-feature-test</module>
     </modules>
 
     <dependencyManagement>
