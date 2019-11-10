@@ -16,6 +16,7 @@
     <modules>
         <module>recipe-core</module>
         <module>recipe-app-feature-test</module>
+        <module>recipe-lib</module>
     </modules>
 
     <dependencyManagement>
