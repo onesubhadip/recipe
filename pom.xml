@@ -11,12 +11,19 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
         <lombok.version>1.18.10</lombok.version>
+<!--        <junit-jupiter.version>5.5.2</junit-jupiter.version>
+        <mockito.junit.jupiter.version>3.1.0</mockito.junit.jupiter.version>-->
+        <junit.version>4.12</junit.version>
+        <mockito.bdd.version>2.21.0</mockito.bdd.version>
+        <assertj.version>3.14.0</assertj.version>
     </properties>
     <modules>
         <module>recipe-core</module>
-        <module>recipe-app-feature-test</module>
         <module>recipe-lib</module>
+        <module>recipe-app-feature-test</module>
     </modules>
 
     <dependencyManagement>
@@ -24,9 +31,45 @@
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <version>1.18.10</version>
+                <version>${lombok.version}</version>
                 <!--<scope>provided</scope>-->
             </dependency>
+            <!-- junit 5 -->
+            <!--<dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>${junit-jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>-->
+
+            <!--<dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-junit-jupiter</artifactId>
+                <version>${mockito.junit.jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>-->
+
+            <!-- junit 4 -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito.bdd.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-core</artifactId>
+                <version>${assertj.version}</version>
+                <scope>test</scope>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
