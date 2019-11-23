@@ -9,7 +9,7 @@ public class SaveNewRecipeSteps {
     @Given("Alice has logged into the application")
     public void alice_has_logged_into_the_application() {
         // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        //throw new cucumber.api.PendingException();
     }
 
     @When("Alice submits a new recipe with a name")
