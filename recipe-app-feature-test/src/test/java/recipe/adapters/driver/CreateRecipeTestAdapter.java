@@ -1,16 +1,19 @@
-package adapters.recipe.driver;
+package recipe.adapters.driver;
 
 
+import com.recipe.lib.cqs.CommandResult;
 import com.recipeapp.core.command.SaveRecipeCommand;
 import com.recipeapp.core.model.Recipe;
 import com.recipeapp.core.port.in.CreateRecipeUseCase;
+import lombok.Builder;
 
+@Builder
 public class CreateRecipeTestAdapter {
 
     private CreateRecipeUseCase saveRecipeService;
 
-    public void initiateSaveRecipeWorkflow() {
+    public CommandResult saveNewRecipe() {
         SaveRecipeCommand saveRecipeCommand = new SaveRecipeCommand(Recipe.builder().build());
-        saveRecipeService.createNewRecipe(saveRecipeCommand);
+        return saveRecipeService.createNewRecipe(saveRecipeCommand);
     }
 }

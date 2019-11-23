@@ -1,6 +1,7 @@
 Feature: Author can save a new recipe in the application
 
-  Background: Alice is an author
+  Background:
+    Given Alice has an account
 
   Scenario: Author can save a new recipe when recipe has a name
     Given Alice has logged into the application
