@@ -5,5 +5,8 @@ import com.recipeapp.core.model.Recipe;
 
 import java.util.function.Consumer;
 
-public interface StoreRecipe extends Consumer<Recipe>{
+public interface RecipeRepositorySPI extends Consumer<Recipe> {
+
+    void saveRecipe(Recipe recipe);
+
 }
