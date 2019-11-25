@@ -4,6 +4,7 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import net.thucydides.core.annotations.Pending;
 import net.thucydides.core.annotations.Steps;
 import recipe.RecipeMain;
 import recipe.steps.SaveRecipeSteps;
@@ -21,6 +22,7 @@ public class SaveNewRecipeStepDefinitions {
     }
 
     @Given("Alice has an account")
+    @Pending
     public void alice_has_an_account() {
         // Write code here that turns the phrase above into concrete actions
         //throw new cucumber.api.PendingException();
@@ -32,16 +34,18 @@ public class SaveNewRecipeStepDefinitions {
         //throw new cucumber.api.PendingException();
     }
 
-    @When("Alice submits a new recipe with a name")
-    public void alice_submits_a_new_recipe_with_a_name() {
+    @When("Alice submits a new recipe")
+    public void alice_submits_a_new_recipe() {
         // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+//        throw new cucumber.api.PendingException();
+        author.submitsNewRecipe();
     }
 
     @Then("Recipe is saved")
     public void recipe_is_saved() {
         // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+//        throw new cucumber.api.PendingException();
+        author.checkSavedRecipeId();
     }
 
 }
