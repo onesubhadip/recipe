@@ -11,14 +11,14 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.source>1.8</maven.compiler.source>
+        <java.version>11</java.version>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
         <lombok.version>1.18.10</lombok.version>
-<!--        <junit-jupiter.version>5.5.2</junit-jupiter.version>
-        <mockito.junit.jupiter.version>3.1.0</mockito.junit.jupiter.version>-->
-        <junit.version>4.12</junit.version>
-        <mockito.bdd.version>2.21.0</mockito.bdd.version>
+        <junit-jupiter.version>5.5.2</junit-jupiter.version>
+        <mockito.junit.jupiter.version>3.1.0</mockito.junit.jupiter.version>
+        <!--<junit.version>4.12</junit.version>
+        <mockito.bdd.version>2.21.0</mockito.bdd.version>-->
         <assertj.version>3.14.0</assertj.version>
     </properties>
     <modules>
@@ -36,22 +36,22 @@
                 <!--<scope>provided</scope>-->
             </dependency>
             <!-- junit 5 -->
-            <!--<dependency>
+            <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-engine</artifactId>
                 <version>${junit-jupiter.version}</version>
                 <scope>test</scope>
-            </dependency>-->
+            </dependency>
 
-            <!--<dependency>
+            <dependency>
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-junit-jupiter</artifactId>
                 <version>${mockito.junit.jupiter.version}</version>
                 <scope>test</scope>
-            </dependency>-->
+            </dependency>
 
             <!-- junit 4 -->
-            <dependency>
+            <!--<dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
@@ -62,7 +62,7 @@
                 <artifactId>mockito-core</artifactId>
                 <version>${mockito.bdd.version}</version>
                 <scope>test</scope>
-            </dependency>
+            </dependency>-->
 
             <dependency>
                 <groupId>org.assertj</groupId>
@@ -70,7 +70,16 @@
                 <version>${assertj.version}</version>
                 <scope>test</scope>
             </dependency>
-
+            <dependency>
+                <groupId>net.java.dev.jna</groupId>
+                <artifactId>jna</artifactId>
+                <version>5.5.0</version>
+            </dependency>
+            <dependency>
+                <groupId>net.java.dev.jna</groupId>
+                <artifactId>jna-platform</artifactId>
+                <version>5.5.0</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
