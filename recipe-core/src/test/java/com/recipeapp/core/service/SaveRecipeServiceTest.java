@@ -6,26 +6,26 @@ import com.recipe.lib.cqs.CommandStatus;
 import com.recipeapp.core.command.SaveRecipeCommand;
 import com.recipeapp.core.command.handler.SaveRecipeCommandHandler;
 import com.recipeapp.core.model.Recipe;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.BDDMockito.given;
 
-@RunWith(MockitoJUnitRunner.class)
+@ExtendWith(MockitoExtension.class)
 public class SaveRecipeServiceTest {
     @Mock
     private SaveRecipeCommandHandler recipeCommandHandler;
 
     private CreateRecipeService createRecipeService;
 
-    @Before
+    @BeforeEach
     public void init() {
         createRecipeService = new CreateRecipeService(recipeCommandHandler);
     }

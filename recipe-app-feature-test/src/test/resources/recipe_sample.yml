@@ -1,0 +1,69 @@
+recipeId: 123e4567-e89b-42d3-a456-556642440000
+authorId: 123e4567-e89b-42d3-a456-556642442222
+name: "some name"
+shortDescription: "some description about the recipe"
+introduction: "little introduction for the recipe"
+ingredients:
+  - name: "ingredient 1"
+    description: "ingredient 1 description"
+    category:
+      - "Vegetable"
+      - "spice"
+    quantity: "500 grames"
+  - name: "ingredient 2"
+    description: "ingredient 2 description"
+    category:
+      - "Vegetable"
+      - "fruit"
+    quantity: "500 grames"
+steps:
+  - stepSequence: "1"
+    heading: "step 1 heading"
+    subHeading: "step 1 subheading"
+    description: "step 1 description"
+    estimatedTime: "10 mins"
+    images:
+      - "image 1"
+      - "image 2"
+    subSteps:
+      - stepSequence: "1"
+        heading: "sub step 1 heading"
+        subHeading: "sub step 1 subheading"
+        description: "sub step 1 description"
+        estimatedTime: "2 mins"
+        images:
+          - "image 1"
+          - "image 2"
+        subSteps: null
+  - stepSequence: "2"
+    heading: "step 2 heading"
+    subHeading: "step 2 subheading"
+    description: "step 2 description"
+    estimatedTime: "10 mins"
+    images:
+      - "image 1"
+      - "image 2"
+    subSteps:
+      - stepSequence: "1"
+        heading: "sub step 1 heading"
+        subHeading: "sub step 1 subheading"
+        description: "sub step 1 description"
+        estimatedTime: "2 mins"
+        images:
+          - "image 1"
+          - "image 2"
+        subSteps: null
+attributes:
+  tags:
+    - "tag1"
+    - "tag2"
+  difficultyLevel: "7"
+  cuisine:
+    - "cuisine origin"
+    - "cuisine origin"
+  category: ""
+  dishType:
+    - "type 1"
+    - "type 2"
+  mealTime:
+    - "time of the day"

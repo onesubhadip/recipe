@@ -12,8 +12,8 @@ public class CreateRecipeTestAdapter {
 
     private CreateRecipeUseCase saveRecipeService;
 
-    public CommandResult saveNewRecipe() {
-        SaveRecipeCommand saveRecipeCommand = new SaveRecipeCommand(Recipe.builder().build());
+    public CommandResult saveNewRecipe(Recipe recipe) {
+        SaveRecipeCommand saveRecipeCommand = new SaveRecipeCommand(recipe);
         return saveRecipeService.createNewRecipe(saveRecipeCommand);
     }
 }

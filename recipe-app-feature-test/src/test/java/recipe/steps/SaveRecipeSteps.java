@@ -1,6 +1,7 @@
 package recipe.steps;
 
 import com.recipe.lib.cqs.CommandResult;
+import com.recipeapp.core.model.Recipe;
 import lombok.Data;
 import recipe.RecipeMain;
 
@@ -12,8 +13,8 @@ public class SaveRecipeSteps {
     private RecipeMain recipeApp;
     private CommandResult saveRecipeResult;
 
-    public void submitsNewRecipe() {
-        saveRecipeResult = recipeApp.getCreateRecipeTestAdapter().saveNewRecipe();
+    public void submitsNewRecipe(Recipe recipe) {
+        saveRecipeResult = recipeApp.getCreateRecipeTestAdapter().saveNewRecipe(recipe);
     }
 
     public void checkSavedRecipeId() {
