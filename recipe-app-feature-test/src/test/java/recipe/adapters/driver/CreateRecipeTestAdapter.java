@@ -13,7 +13,7 @@ public class CreateRecipeTestAdapter {
     private CreateRecipeUseCase saveRecipeService;
 
     public CommandResult saveNewRecipe(Recipe recipe) {
-        SaveRecipeCommand saveRecipeCommand = new SaveRecipeCommand(recipe);
+        SaveRecipeCommand saveRecipeCommand = SaveRecipeCommand.with(recipe);
         return saveRecipeService.createNewRecipe(saveRecipeCommand);
     }
 }
