@@ -1,21 +1,21 @@
 
-package com.recipeapp.core.model;
+package com.recipeapp.core.model.dto;
 
-import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Data
-@Builder
-public class Steps {
+@NoArgsConstructor
+public class StepsDTO {
 
     private String stepSequence;
     private String heading;
     private String subHeading;
     private String description;
     private List<String> images;
-    private List<Steps> subSteps;
+    private List<StepsDTO> subSteps;
     private String estimatedTime;
 
 }

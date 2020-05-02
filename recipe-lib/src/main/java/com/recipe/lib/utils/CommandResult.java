@@ -1,4 +1,4 @@
-package com.recipe.lib.cqs;
+package com.recipe.lib.utils;
 
 import lombok.Builder;
 import lombok.Getter;

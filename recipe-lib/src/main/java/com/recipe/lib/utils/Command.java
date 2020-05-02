@@ -1,4 +1,4 @@
-package com.recipe.lib.cqs;
+package com.recipe.lib.utils;
 
 public interface Command {
 }

@@ -1,7 +1,5 @@
 package com.recipeapp.core.command.handler;
 
-import com.recipe.lib.cqs.CommandResult;
-import com.recipe.lib.cqs.CommandStatus;
 import com.recipeapp.core.command.SaveRecipeCommand;
 import com.recipeapp.core.model.Recipe;
 import com.recipeapp.core.port.out.RecipeRepositorySPI;
@@ -9,14 +7,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.UUID;
-
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.willDoNothing;
+import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
 public class SaveRecipeCommandHandlerTest {
@@ -31,15 +26,12 @@ public class SaveRecipeCommandHandlerTest {
     }
 
     @Test
-    public void saveRecipeShouldPersistRecipeAndReturnSuccessResult() {
+    public void saveRecipeShouldPersistRecipeWithRecipeRepository() {
         willDoNothing().given(recipeRepository).saveRecipe(any(Recipe.class));
-        Recipe recipe = new Recipe();
-        recipe.setRecipeId(UUID.randomUUID());
-        CommandResult commandResult = saveRecipeCommandHandler.handle(SaveRecipeCommand.with(recipe));
+        Recipe recipe = Recipe.builder().build();
+        SaveRecipeCommand saveRecipeCommand = SaveRecipeCommand.with(recipe);
+        saveRecipeCommandHandler.handle(saveRecipeCommand);
 
-        assertThat(commandResult).isNotNull();
-        assertThat(commandResult.getCommandId()).isNotNull();
-        assertThat(commandResult.getCommandName()).isEqualTo("SaveRecipeCommand");
-        assertThat(commandResult.getStatus()).isEqualTo(CommandStatus.SUCCESS);
+        verify(recipeRepository).saveRecipe(recipe);
     }
 }
