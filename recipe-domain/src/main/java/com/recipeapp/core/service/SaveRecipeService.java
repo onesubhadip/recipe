@@ -1,19 +1,18 @@
 package com.recipeapp.core.service;
 
 
-import com.recipe.lib.cqs.CommandResult;
 import com.recipeapp.core.command.SaveRecipeCommand;
 import com.recipeapp.core.command.handler.SaveRecipeCommandHandler;
-import com.recipeapp.core.port.in.CreateRecipeUseCase;
+import com.recipeapp.core.port.in.SaveRecipeUseCase;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
-public class CreateRecipeService implements CreateRecipeUseCase {
+public class SaveRecipeService implements SaveRecipeUseCase {
 
     private SaveRecipeCommandHandler saveRecipeCommandHandler;
 
     @Override
-    public CommandResult createNewRecipe(SaveRecipeCommand command) {
-        return saveRecipeCommandHandler.handle(command);
+    public void saveRecipe(SaveRecipeCommand command) {
+        saveRecipeCommandHandler.handle(command);
     }
 }

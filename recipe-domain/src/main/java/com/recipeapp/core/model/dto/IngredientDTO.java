@@ -1,15 +1,15 @@
 
-package com.recipeapp.core.model;
+package com.recipeapp.core.model.dto;
 
 
-import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Data
-@Builder
-public class Ingredient {
+@NoArgsConstructor
+public class IngredientDTO {
 
     private String name;
     private String description;

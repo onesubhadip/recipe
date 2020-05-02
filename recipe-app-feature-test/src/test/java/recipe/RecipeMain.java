@@ -2,7 +2,7 @@ package recipe;
 
 import com.recipeapp.core.command.handler.SaveRecipeCommandHandler;
 import com.recipeapp.core.port.out.RecipeRepositorySPI;
-import com.recipeapp.core.service.CreateRecipeService;
+import com.recipeapp.core.service.SaveRecipeService;
 import lombok.Getter;
 import recipe.adapters.driven.MockRecipeRepositoryAdapter;
 import recipe.adapters.driver.CreateRecipeTestAdapter;
@@ -16,10 +16,10 @@ public class RecipeMain {
 
         RecipeRepositorySPI recipeRepositorySPI = MockRecipeRepositoryAdapter.getInstance();
         SaveRecipeCommandHandler saveRecipeCommandHandler = new SaveRecipeCommandHandler(recipeRepositorySPI);
-        CreateRecipeService createRecipeService = new CreateRecipeService(saveRecipeCommandHandler);
+        SaveRecipeService saveRecipeService = new SaveRecipeService(saveRecipeCommandHandler);
 
         createRecipeTestAdapter = CreateRecipeTestAdapter.builder()
-                .saveRecipeService(createRecipeService)
+                .saveRecipeService(saveRecipeService)
                 .build();
     }
 

@@ -1,6 +1,6 @@
 package recipe.stepdefinitions;
 
-import com.recipeapp.core.model.Recipe;
+import com.recipeapp.core.model.dto.RecipeDTO;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -12,7 +12,6 @@ import org.yaml.snakeyaml.constructor.Constructor;
 import recipe.RecipeMain;
 import recipe.steps.SaveRecipeSteps;
 
-import java.io.File;
 import java.io.InputStream;
 
 public class SaveNewRecipeStepDefinitions {
@@ -42,11 +41,9 @@ public class SaveNewRecipeStepDefinitions {
 
     @When("Alice submits a new recipe like in file {string}")
     public void alice_submits_a_new_recipe(String recipeFile) {
-        File recipeInput = new File(getClass().getClassLoader().getResource(recipeFile).getFile());
-
-        Yaml yaml = new Yaml(new Constructor(Recipe.class));
+        Yaml yaml = new Yaml(new Constructor(RecipeDTO.class));
         InputStream recipeStream = getClass().getClassLoader().getResourceAsStream(recipeFile);
-        Recipe recipe = yaml.load(recipeStream);
+        RecipeDTO recipe = yaml.load(recipeStream);
         System.out.println(recipe);
         author.submitsNewRecipe(recipe);
     }
