@@ -68,7 +68,7 @@ class WhenCreatingNewRecipe {
                 .content(recipePayload)
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
-                .andExpect(status().isCreated())
+                .andExpect(status().isNoContent())
                 .andExpect(jsonPath("$.commandId").value(id))
                 .andExpect(jsonPath("$.status").value("SUCCESS"));
     }
