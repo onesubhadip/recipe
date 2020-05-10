@@ -1,13 +1,9 @@
 package integration.usecase;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.recipeapp.core.model.dto.AttributesDTO;
-import com.recipeapp.core.model.dto.RecipeDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
-import java.util.Collections;
+import java.io.InputStream;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
@@ -19,19 +15,13 @@ public class SaveNewRecipeUseCase {
     private final String saveRecipeEndpoint = "/recipe";
 
     @Test
-    public void test() throws JsonProcessingException {
-        log.info("Integration test - RUNNIG");
-        RecipeDTO recipe = new RecipeDTO();
-        recipe.setName("First Recipe");
-        recipe.setShortDescription("A brief recipe");
-        recipe.setAttributes(new AttributesDTO());
-        recipe.setIngredients(Collections.emptyList());
-        recipe.setSteps(Collections.emptyList());
-        String recipePayload = new ObjectMapper().writeValueAsString(recipe);
+    public void test() {
+        InputStream payload = this.getClass().getClassLoader()
+                .getResourceAsStream("payloads/recipe-1.json");
 
         given()
             .contentType("application/json")
-            .body(recipePayload)
+            .body(payload)
         .when()
             .post(baseUrl + saveRecipeEndpoint)
         .then()
