@@ -3,7 +3,7 @@ package com.recipeapp.core.port.out;
 
 import com.recipeapp.core.model.Recipe;
 
-public interface RecipeRepositorySPI {
+public interface RecipeCommandRepositorySPI {
 
     void saveRecipe(Recipe recipe);
 
