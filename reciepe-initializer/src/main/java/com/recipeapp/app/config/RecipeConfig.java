@@ -2,7 +2,7 @@ package com.recipeapp.app.config;
 
 import com.recipeapp.core.command.handler.SaveRecipeCommandHandler;
 import com.recipeapp.core.port.in.SaveRecipeUseCase;
-import com.recipeapp.core.port.out.RecipeRepositorySPI;
+import com.recipeapp.core.port.out.RecipeCommandRepositorySPI;
 import com.recipeapp.core.service.SaveRecipeService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,8 +11,8 @@ import org.springframework.context.annotation.Configuration;
 public class RecipeConfig {
 
     @Bean
-    public SaveRecipeUseCase createRecipeService(RecipeRepositorySPI recipeRepositorySPI) {
+    public SaveRecipeUseCase createRecipeService(RecipeCommandRepositorySPI recipeCommandRepositorySPI) {
 
-        return new SaveRecipeService(new SaveRecipeCommandHandler(recipeRepositorySPI));
+        return new SaveRecipeService(new SaveRecipeCommandHandler(recipeCommandRepositorySPI));
     }
 }

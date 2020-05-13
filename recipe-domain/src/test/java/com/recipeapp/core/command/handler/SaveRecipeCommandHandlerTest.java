@@ -2,7 +2,7 @@ package com.recipeapp.core.command.handler;
 
 import com.recipeapp.core.command.SaveRecipeCommand;
 import com.recipeapp.core.model.Recipe;
-import com.recipeapp.core.port.out.RecipeRepositorySPI;
+import com.recipeapp.core.port.out.RecipeCommandRepositorySPI;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -18,7 +18,7 @@ public class SaveRecipeCommandHandlerTest {
     private SaveRecipeCommandHandler saveRecipeCommandHandler;
 
     @Mock
-    private RecipeRepositorySPI recipeRepository;
+    private RecipeCommandRepositorySPI recipeRepository;
 
     @BeforeEach
     public void init() {
