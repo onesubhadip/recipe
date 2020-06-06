@@ -1,9 +1,9 @@
 package com.recipeapp.core.service;
 
-import com.recipeapp.core.model.Recipe;
+import com.recipe.lib.utils.Query;
+import com.recipe.lib.utils.QueryHandler;
+import com.recipe.lib.utils.QueryResult;
 import com.recipeapp.core.port.in.GetRecipeUseCase;
-import com.recipeapp.core.query.Query;
-import com.recipeapp.core.query.handler.QueryHandler;
 import lombok.RequiredArgsConstructor;
 
 import java.util.Map;
@@ -14,10 +14,7 @@ public class GetRecipeService implements GetRecipeUseCase {
     private final Map<String, QueryHandler> queryHandlerMapping;
 
     @Override
-    public Recipe getRecipe(Query recipeQuery) {
-        return queryHandlerMapping.get(recipeQuery.getName().name()).handle(recipeQuery);
+    public QueryResult getRecipe(Query recipeQuery) {
+        return queryHandlerMapping.get(recipeQuery.name().name()).handle(recipeQuery);
     }
-
-
-
 }

@@ -32,6 +32,11 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>org.reflections</groupId>
+            <artifactId>reflections</artifactId>
+            <version>0.9.12</version>
+        </dependency>
 
         <!-- TEST DEPENDENCIES -->
 
@@ -138,17 +143,17 @@
                                     <detachedMode>true</detachedMode>
                                 </configuration>
                             </execution>
-                            <execution>
-                                <id>down</id>
-                                <phase>post-integration-test</phase>
-                                <goals>
-                                    <goal>down</goal>
-                                </goals>
-                                <configuration>
-                                    <composeFile>${project.basedir}/mongodb-compose.yml</composeFile>
-                                    <removeVolumes>true</removeVolumes>
-                                </configuration>
-                            </execution>
+<!--                            <execution>-->
+<!--                                <id>down</id>-->
+<!--                                <phase>post-integration-test</phase>-->
+<!--                                <goals>-->
+<!--                                    <goal>down</goal>-->
+<!--                                </goals>-->
+<!--                                <configuration>-->
+<!--                                    <composeFile>${project.basedir}/mongodb-compose.yml</composeFile>-->
+<!--                                    <removeVolumes>true</removeVolumes>-->
+<!--                                </configuration>-->
+<!--                            </execution>-->
                         </executions>
                     </plugin>
 
@@ -163,13 +168,13 @@
                                     <goal>start</goal>
                                 </goals>
                             </execution>
-                            <execution>
-                                <id>shut down the application</id>
-                                <phase>post-integration-test</phase>
-                                <goals>
-                                    <goal>stop</goal>
-                                </goals>
-                            </execution>
+<!--                            <execution>-->
+<!--                                <id>shut down the application</id>-->
+<!--                                <phase>post-integration-test</phase>-->
+<!--                                <goals>-->
+<!--                                    <goal>stop</goal>-->
+<!--                                </goals>-->
+<!--                            </execution>-->
                         </executions>
                     </plugin>
 
