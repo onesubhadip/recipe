@@ -25,7 +25,7 @@
         <module>recipe-lib</module>
         <module>recipe-domain</module>
         <module>recipe-app-feature-test</module>
-        <module>reciepe-initializer</module>
+        <module>reciepe-command</module>
         <module>recipe-query</module>
     </modules>
 
