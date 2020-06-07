@@ -2,7 +2,7 @@ package com.recipeapp.core.query.handler;
 
 import com.recipe.lib.utils.Query;
 import com.recipe.lib.utils.QueryHandler;
-import com.recipe.lib.utils.QueryHandlerFor;
+import com.recipe.lib.utils.ForQuery;
 import com.recipe.lib.utils.QueryResult;
 import com.recipeapp.core.port.in.GetRecipeUseCase;
 import com.recipeapp.core.port.out.RecipeQueryRepositorySPI;
@@ -10,7 +10,7 @@ import com.recipeapp.core.query.FindByIdResult;
 import com.recipeapp.core.query.FindRecipeByIdQuery;
 import lombok.RequiredArgsConstructor;
 
-@QueryHandlerFor({FindRecipeByIdQuery.class})
+@ForQuery({FindRecipeByIdQuery.class})
 @RequiredArgsConstructor
 public class FindRecipeByIdQueryHandler implements QueryHandler, GetRecipeUseCase {
 
